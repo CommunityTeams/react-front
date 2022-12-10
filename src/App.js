@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Routers from './pages/Routers'
+import Routers from './shared/Routers'
 import { Reset } from 'styled-reset'
 
 function App() {

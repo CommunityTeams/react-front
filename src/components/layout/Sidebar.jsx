@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/img/logo.png";
+
 import styled from "styled-components";
 
 export default function sidebar() {
@@ -10,7 +10,7 @@ export default function sidebar() {
           <StLogo className="logo">LOGO</StLogo>
         </div>
         <div className="add_button_container">
-          <StButton>리스트 추가하기</StButton>
+          <StButton>리스트 추가하기.</StButton>
         </div>
         <StCategory>
           <span className="category_title">

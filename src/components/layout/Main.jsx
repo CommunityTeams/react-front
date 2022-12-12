@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from 'react-router-dom'
 
 export default function Main() {
   return (
@@ -10,6 +11,7 @@ export default function Main() {
           <div className="upload_list_container">
             <StWritingBtn>
               글쓰기{" "}
+              <Link to={'/Post/add'} >
               <span
                 style={{
                   width: "15px",
@@ -17,7 +19,7 @@ export default function Main() {
                   background: "grey",
                   display: "block",
                 }}
-              ></span>
+              ></span></Link>
             </StWritingBtn>
           </div>
         </div>

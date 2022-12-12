@@ -22,10 +22,10 @@ export default function sidebar() {
                 background: "grey",
                 display: "block",
               }}
-            ></span>
+            />
             <span>커뮤니티 리스트</span>
           </span>
-          {/* 밑에 카테고리 리스트는 나중에 컴포넌트로 만들 예정*/}
+
           <StCategoryInner>
             <span>리스트1</span>
             <span>리스트1</span>

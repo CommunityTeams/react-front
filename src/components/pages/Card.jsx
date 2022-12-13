@@ -19,6 +19,7 @@ const StCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px 0;
+
   padding: 10px;
   box-sizing: border-box;
   border: 1px solid #ececec;

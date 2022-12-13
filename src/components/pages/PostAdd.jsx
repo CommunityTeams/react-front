@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 // import { useState } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
 // import {v4 as uuidv4} from "uuid";
@@ -6,18 +6,18 @@ import styled from "styled-components";
 // import { addPost, __getComment } from '../redux/modules/postSlice';
 // import { __addComment } from "../redux/modules/postSlice";
 
-const PostAdd = () => {
-  //dispatch
+function PostAdd() {
+  // dispatch
 
-  //useState
+  // useState
 
-  //onSubmitHandler
+  // onSubmitHandler
 
-  //onChangeHandler
+  // onChangeHandler
 
-  //__addComment 시간나면 댓글달기
+  // __addComment 시간나면 댓글달기
 
-  //__getComment 시간나면
+  // __getComment 시간나면
 
   return (
     <StContainer>
@@ -47,11 +47,13 @@ const PostAdd = () => {
           // onChange={onChangeHandler}
           placeholder="내용을 입력해주세요"
         />
-        <button size="large">추가하기</button>
+        <button type="button" size="large">
+          추가하기
+        </button>
       </StAddForm>
     </StContainer>
   );
-};
+}
 
 export default PostAdd;
 

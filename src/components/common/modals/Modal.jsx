@@ -3,25 +3,19 @@ import styled from "styled-components";
 import { IoIosClose } from "react-icons/io";
 
 export default function Modal(props) {
-  const { modal, close, header, content } = props;
-  const closeEventHandler = () => {
-    close();
-    content.current.value = "";
-  };
+  const { modal, close, submit, header } = props;
+
   return (
     <StModalContainer className={modal ? "modal open" : "modal"}>
       <div className="modal_inner">
         <div className="modal_header">
           <span>{header}</span>
-          <StClose className="modal_close_btn" onClick={closeEventHandler} />
+          <StClose className="modal_close_btn" onClick={close} />
         </div>
         <StContent>
           <div className="modal_content_inner">{props.children}</div>
           <div className="modal_footer">
-            <StButton
-              type="button"
-              onClick={() => console.log(content.current.value)}
-            >
+            <StButton type="button" onClick={submit}>
               추가하기
             </StButton>
           </div>
@@ -53,7 +47,7 @@ const StModalContainer = styled.div`
     left: 50%;
     z-index: 3;
     max-width: 500px;
-    width: 100%;
+    width: 95%;
     transform: translate(-50%, -100%);
   }
   .modal_header {

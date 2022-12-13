@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function Card(data, locationHandler) {
-  console.log(data);
-  const { id, title, content, img } = data.data; // eslint-disable-line no-unused-vars
-  console.log(title, content, img);
+export default function Card({ data, locationHandler }) {
+  const { id, title, content, img } = data; // eslint-disable-line no-unused-vars
+  console.log(title, content, img, id);
   return (
     <StCard onClick={() => locationHandler(id)}>
       <StCardImg src={img} alt="" />

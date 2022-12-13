@@ -2,7 +2,8 @@ import React from "react";
 
 import styled from "styled-components";
 
-export default function sidebar() {
+export default function sidebar(props) {
+  const { modal, close } = props; // eslint-disable-line no-unused-vars
   return (
     <StSidebar>
       <div className="sidebar_inner">
@@ -10,7 +11,7 @@ export default function sidebar() {
           <StLogo className="logo">LOGO</StLogo>
         </div>
         <div className="add_button_container">
-          <StButton>리스트 추가하기.</StButton>
+          <StButton onClick={close}>리스트 추가하기.</StButton>
         </div>
         <StCategory>
           <span className="category_title">
@@ -39,10 +40,12 @@ export default function sidebar() {
 
 const StSidebar = styled.div`
   width: 100%;
-
   max-width: 270px;
-
   border: 1px solid #ececec;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #fff;
   .sidebar_inner {
     min-height: 100vh;
     box-sizing: border-box;

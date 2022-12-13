@@ -11,9 +11,9 @@ export default function Main() {
   const dataList = useSelector((state) => state.post.todos);
   console.log(dataList);
   const isLoading = useSelector((state) => state.isLoading);
-
+  const navigate = useNavigate();
   const locationHandler = (id) => {
-    useNavigate(`/${id}`);
+    navigate(`/${id}`);
   };
   useEffect(() => {
     dispatch(getTodos());
@@ -42,7 +42,7 @@ export default function Main() {
               <Card
                 key={data.id}
                 data={data}
-                loactionHandler={locationHandler}
+                locationHandler={locationHandler}
               />
             ))}
           </div>
@@ -54,6 +54,7 @@ export default function Main() {
 
 const StMainWrapper = styled.main`
   width: 100%;
+  margin-left: 270px;
   .main_inner {
     height: 100%;
     padding: 30px 40px;

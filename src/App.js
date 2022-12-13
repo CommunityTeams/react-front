@@ -1,7 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-import Routers from './shared/Routers'
-import { Reset } from 'styled-reset'
+import "./App.css";
+import React from "react";
+import { Reset } from "styled-reset";
+import Routers from "./shared/Routers";
 
 function App() {
   return (

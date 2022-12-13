@@ -1,7 +1,7 @@
 import React from "react";
-import Sidebar from "../layout/Sidebar";
 import styled from "styled-components";
-import Main from "../layout/Main";
+import Sidebar from "../pages/Sidebar";
+import Main from "../pages/Main";
 
 export default function Home() {
   return (

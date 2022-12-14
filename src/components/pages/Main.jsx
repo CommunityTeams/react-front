@@ -1,51 +1,84 @@
 import React from "react";
+import { BsPencilSquare } from "react-icons/bs";
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
 
 export default function Main() {
   return (
-    <>
-      <StMainWrapper>
-        <div className="main_inner">
-          <h2>커뮤니티 페이지</h2>
-          <div className="upload_list_container">
+    <StMainWrapper>
+      <div className="main_inner">
+        <StMainTitle>커뮤니티 페이지</StMainTitle>
+        <StUploadContainer>
+          <div className="write_btn_container">
             <StWritingBtn>
-              글쓰기{" "}
-              <Link to={'/Post/add'} >
-              <span
-                style={{
-                  width: "15px",
-                  height: "15px",
-                  background: "grey",
-                  display: "block",
-                }}
-              ></span></Link>
+              <StLink to="/Post/add">
+                <p>글쓰기</p>
+                <StPencil />
+              </StLink>
             </StWritingBtn>
           </div>
-        </div>
-      </StMainWrapper>
-    </>
+          <hr />
+          <div className="upload_list_container">
+            {/* {dataList?.map((data) => (
+              <Card
+                key={data.id}
+                data={data}
+                locationHandler={locationHandler}
+              />
+            ))} */}
+          </div>
+        </StUploadContainer>
+      </div>
+    </StMainWrapper>
   );
 }
 
 const StMainWrapper = styled.main`
   width: 100%;
+  margin-left: 270px;
   .main_inner {
     height: 100%;
     padding: 30px 40px;
     box-sizing: border-box;
   }
+  .write_btn_container {
+    display: flex;
+    justify-content: flex-end;
+  }
 `;
-const StWritingBtn = styled.span`
+const StPencil = styled(BsPencilSquare)`
+  width: 15px;
+  height: 15px;
+`;
+const StLink = styled(Link)`
+  text-decoration: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  gap: 0 5px;
+  color: #353535;
+`;
+const StUploadContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  .upload_list_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+`;
+const StMainTitle = styled.h2`
+  font-size: 1.9rem;
+  font-weight: 600;
+`;
+
+const StWritingBtn = styled.span`
   padding: 7px 10px;
-  box-sizing: border-box;
-  border-radius: 3px;
-  gap: 0 8px;
   border: 1px solid #ececec;
-  align-items: center;
-  width: fit-content;
   cursor: pointer;
+  font-size: 0.8rem;
+  box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 10%);
+  &:active {
+    box-shadow: none;
+  }
 `;

@@ -7,21 +7,21 @@ import styled from "styled-components";
 // import { __addComment } from "../redux/modules/postSlice";
 
 function PostAdd() {
-  //dispatch
+  // dispatch
 
-  //useState
+  // useState
 
-  //onSubmitHandler
+  // onSubmitHandler
 
-  //onChangeHandler
+  // onChangeHandler
 
-  //__addComment 시간나면 댓글달기
+  // __addComment 시간나면 댓글달기
 
-  //__getComment 시간나면
+  // __getComment 시간나면
 
   return (
     <StContainer>
-      {/* <StAddForm action="" onSubmit={onsubmitHandler}> */}
+      {/* <StAddForm action="" onSubmit={onSubmitHandler}> */}
       <StAddForm action="">
         <h2>작성자</h2>
         <StInputGroup
@@ -47,7 +47,9 @@ function PostAdd() {
           // onChange={onChangeHandler}
           placeholder="내용을 입력해주세요"
         />
-        <button size="large">추가하기</button>
+        <button type="button" size="large">
+          추가하기
+        </button>
       </StAddForm>
     </StContainer>
   );

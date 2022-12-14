@@ -47,9 +47,9 @@ const StModalContainer = styled.div`
     left: 50%;
     z-index: 3;
     max-width: 500px;
-    width: 95%;
     transform: translate(-50%, -100%);
     animation: open ease-in-out 0.3s forwards;
+    width: 95%;
   }
   .modal_header {
     display: flex;

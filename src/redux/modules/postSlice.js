@@ -18,6 +18,21 @@ export const getLists = createAsyncThunk(
     }
   }
 );
+export const getComm = createAsyncThunk(
+  "getComm",
+  async (payload, ThunkAPI) => {
+    try {
+      const data = await axios.get("http://localhost:3004/comm");
+      console.log(data);
+      return ThunkAPI.fulfillWithValue(data.data);
+      // Promise가 resolve 됬을 경우
+    } catch (error) {
+      console.log(error);
+      return ThunkAPI.rejectWithValue(error);
+      /* ThunkAPI. */
+    }
+  }
+);
 
 export const getComm = createAsyncThunk(
   "getComm",
@@ -77,6 +92,10 @@ export const postSlice = createSlice({
     [getComm.fulfilled]: (state, action) => {
       state.isLoading = false; // 네트워크 요청이 끝났으니, false로 변경합니다.
       state.comm = action.payload; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
+    },
+    [postLists.fulfilled]: (state, action) => {
+      state.isLoading = false; // 네트워크 요청이 끝났으니, false로 변경합니다.
+      state.comm = [...state.comm, action.payload]; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
     },
   },
 });

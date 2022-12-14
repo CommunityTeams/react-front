@@ -11,8 +11,8 @@ export default function Sidebar() {
   const [content, useContent] = useState(false);
   const dispatch = useDispatch();
   const comm = useSelector((state) => state.post.comm);
-
   // 모달창 x 버튼 눌렀을 때
+  console.log(comm);
   const closeEventHandler = () => {
     onChangeModalHandler();
     contentInput.current.value = "";
@@ -21,12 +21,14 @@ export default function Sidebar() {
   // 모달창에서 추가하기 버튼 눌렀을 때, 서버에 input text 저장
   const onSubmitHandler = () => {
     if (contentInput.current.value === "") {
-      return alert("이름을 작성하셨는지 한번 더 확인해주세요.");
+      return alert("이름을 작성하셨는지 한번 더 확인해주세요."); // eslint-disable-line no-alert
     }
     dispatch(postComm({ name: contentInput.current.value }));
     useContent(!content);
     contentInput.current.value = "";
     return onChangeModalHandler();
+    onChangeModalHandler();
+    return dispatch(postLists({ name: contentInput.current.value }));
   };
   const onClickHandler = (id) => {
     dispatch({ type: "setComm", payload: id });
@@ -82,6 +84,11 @@ export default function Sidebar() {
                   </button>
                 );
               })}
+            {comm?.map((item) => {
+              return (
+                <StCategoryTitle key={item.name}>{item.name}</StCategoryTitle>
+              );
+            })}
           </StCategoryInner>
         </StCategory>
       </div>
@@ -160,4 +167,7 @@ const StModalInput = styled.input`
   outline: none;
   text-indent: 10px;
   border-radius: 3px;
+`;
+const StCategoryTitle = styled.input`
+  font-size: 0.9rem;
 `;

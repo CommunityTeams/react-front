@@ -1,25 +1,39 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import useModal from "../../hooks/useModal";
 import Modal from "../common/modals/Modal";
-import { postLists } from "../../redux/modules/postSlice";
+import { postComm, getComm } from "../../redux/modules/postSlice";
 
-export default function sidebar() {
+export default function Sidebar() {
   const contentInput = useRef();
   const [modal, onChangeModalHandler] = useModal();
+  const [content, useContent] = useState(false);
   const dispatch = useDispatch();
+  const comm = useSelector((state) => state.post.comm);
+
+  // 모달창 x 버튼 눌렀을 때
   const closeEventHandler = () => {
     onChangeModalHandler();
     contentInput.current.value = "";
   };
+
+  // 모달창에서 추가하기 버튼 눌렀을 때, 서버에 input text 저장
   const onSubmitHandler = () => {
-    console.log(contentInput.current.value);
     if (contentInput.current.value === "") {
       return alert("이름을 작성하셨는지 한번 더 확인해주세요.");
     }
-    return dispatch(postLists({ name: contentInput.current.value }));
+    dispatch(postComm({ name: contentInput.current.value }));
+    useContent(!content);
+    contentInput.current.value = "";
+    return onChangeModalHandler();
   };
+  const onClickHandler = (id) => {
+    dispatch({ type: "setComm", payload: id });
+  };
+  useEffect(() => {
+    dispatch(getComm());
+  }, [content]);
 
   return (
     <StSidebar>
@@ -37,7 +51,7 @@ export default function sidebar() {
           <StLogo className="logo">LOGO</StLogo>
         </div>
         <div className="add_button_container">
-          <StButton onClick={onChangeModalHandler}>리스트 추가하기.</StButton>
+          <StButton onClick={onChangeModalHandler}>리스트 추가하기</StButton>
         </div>
         <StCategory>
           <span className="category_title">
@@ -54,9 +68,20 @@ export default function sidebar() {
           </span>
 
           <StCategoryInner>
-            <span>리스트1</span>
-            <span>리스트1</span>
-            <span>리스트1</span>
+            {comm &&
+              comm.map((item) => {
+                console.log(item);
+                return (
+                  <button
+                    type="button"
+                    key={item.id}
+                    className="category_list"
+                    onClick={() => onClickHandler(item.id)}
+                  >
+                    {item.name}
+                  </button>
+                );
+              })}
           </StCategoryInner>
         </StCategory>
       </div>
@@ -90,6 +115,13 @@ const StCategoryInner = styled.div`
   flex-direction: column;
   gap: 15px 0;
   padding: 0 30px;
+  .category_list {
+    font-size: 0.9rem;
+    cursor: pointer;
+    width: fit-content;
+    background: none;
+    border: none;
+  }
 `;
 const StCategory = styled.div`
   display: flex;

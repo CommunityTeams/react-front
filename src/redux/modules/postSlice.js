@@ -34,8 +34,23 @@ export const getComm = createAsyncThunk(
   }
 );
 
-export const postLists = createAsyncThunk(
-  "postLists",
+export const getComm = createAsyncThunk(
+  "getComm",
+  async (payload, ThunkAPI) => {
+    try {
+      const data = await axios.get("http://localhost:3004/comm");
+
+      return ThunkAPI.fulfillWithValue(data.data);
+      // Promise가 resolve 됬을 경우
+    } catch (error) {
+      return ThunkAPI.rejectWithValue(error);
+      /* ThunkAPI. */
+    }
+  }
+);
+
+export const postComm = createAsyncThunk(
+  "postComm",
   async (payload, ThunkAPI) => {
     try {
       console.log(payload);

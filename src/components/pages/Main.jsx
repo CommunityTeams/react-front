@@ -9,7 +9,7 @@ import Card from "./Card";
 export default function Main() {
   const dispatch = useDispatch();
   const dataList = useSelector((state) => state.post.lists);
-  console.log(dataList);
+
   const isLoading = useSelector((state) => state.isLoading);
   const navigate = useNavigate();
   const locationHandler = (id) => {

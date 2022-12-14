@@ -13,5 +13,22 @@
       "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
     }
   ],
-  "comm": []
+  "comm": [
+    {
+      "name": "988",
+      "id": 1
+    },
+    {
+      "name": "888",
+      "id": 2
+    },
+    {
+      "name": "222222",
+      "id": 3
+    },
+    {
+      "name": "7777",
+      "id": 4
+    }
+  ]
 }

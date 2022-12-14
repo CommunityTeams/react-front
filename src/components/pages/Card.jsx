@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export default function Card({ data, locationHandler }) {
   const { id, title, content, img } = data; // eslint-disable-line no-unused-vars
-  console.log(title, content, img, id);
   return (
     <StCard onClick={() => locationHandler(id)}>
       <StCardImg src={img} alt="" />

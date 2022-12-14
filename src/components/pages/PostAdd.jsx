@@ -1,68 +1,60 @@
-import React from "react";
-import { useParams, useNavigate } from 'react-router-dom';
-import { useState , useEffect } from 'react';
+import React, {useEffect} from "react";
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import {v4 as uuidv4} from "uuid";
-import styled from "styled-components";
 import axios from "axios";
-import {__addNewPost } from '../../redux/modules/postsSlice';
-// import {__addNewPost, __updatePost} from '../../redux/modules/postsSlice';
-import newPost from '../pages/newPost';
+import {v4 as uuidv4} from "uuid";
+import styled from "styled-components";
+import {__addNewPost,__updatePost } from '../../redux/modules/postsSlice';
 
-function PostAdd() {
-  const { postId } = useParams();
-  const postText = useSelector((state) => state.postText);
+const PostAdd = () => {
+ const { lists} = useSelector((state) => state.lists);
+  // const postText = useSelector((state) => state.postText);
   // dispatch
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // useState
-  const [list] = useState({
-    id: "",
-    title: "",
-    content:"",
-  });
-  const [lists, setLists] = useState({
+  const [postlist, setPostLists ] = useState({
     id: 0,
+    user:"",
     title: "",
     content:"",
   });
   const fetchLists = async () => {
     const { data } = await axios.get("http://localhost:3004/lists");
-    setLists(data);
+    setPostLists(data);
   };
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    dispatch(__addNewPost(newPost(postText)));
-    navigate('/');
-    
+    dispatch(
+      __addNewPost({...postlist, id: uuidv4()}));
+    setPostLists({
+      id:0,
+      user:"",
+      title: "",
+      content:"",
+    });
+    navigate("/posts");
   };
-  // const onSubmitHandler = (list) => {
-  //   axios.post("http://localhost:3004/lists", list);
-  //   setLists([...lists, { ...list, id: lists.length + 1 }]);
-  // };
   // onChangeHandler
-  // const onChangeHandler = (event) => {
-  //   event.preventDefault();
-  //   dispatch(__updatePost({ ...postText, id: postId }));
-  //   navigate(`/details/${postId}`);
-  // };
-  //useEffect
+  const onChangeHandler = (event) => {
+    const{name,value} = event.target;
+    dispatch(__updatePost({ ...postlist, [name]:value }));
+  };
+
   useEffect(() => {
     fetchLists();
   }, []);
 
 return (
     <StContainer>
-      <StAddForm action="" onSubmit={(e) => {
-          e.preventDefault();
-          onSubmitHandler(list);
-        }}>
+      <StAddForm action="" onSubmit={onSubmitHandler}>
         <h2>작성자</h2>
         <StInputGroup
           type="text"
-          // name="user"
-          // value={lists.user}
-          // onChange={onChangeHandler}
+          name="user"
+          value={lists.user}
+          onChange={onChangeHandler}
           placeholder="이름을 입력해주세요"
         />
         <h2>제목</h2>
@@ -70,7 +62,7 @@ return (
           type="text"
           name="title"
           value={lists.title}
-          // onChange={onChangeHandler}
+          onChange={onChangeHandler}
           placeholder="제목을 입력해주세요"
         />
         <h2>내용</h2>
@@ -78,7 +70,7 @@ return (
           type="text"
           name="content"
           value={lists.content}
-          // onChange={onChangeHandler}
+          onChange={onChangeHandler}
           placeholder="내용을 입력해주세요"
         />
         <button type="submit" size="large">

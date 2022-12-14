@@ -37,7 +37,7 @@ export default function sidebar() {
           <StLogo className="logo">LOGO</StLogo>
         </div>
         <div className="add_button_container">
-          <StButton onClick={onChangeModalHandler}>리스트 추가하기.</StButton>
+          <StButton onClick={onChangeModalHandler}>리스트 추가하기</StButton>
         </div>
         <StCategory>
           <span className="category_title">
@@ -49,10 +49,8 @@ export default function sidebar() {
                 background: "grey",
                 display: "block",
               }}
-            />
             <span>커뮤니티 리스트</span>
           </span>
-
           <StCategoryInner>
             <span>리스트1</span>
             <span>리스트1</span>
@@ -129,3 +127,4 @@ const StModalInput = styled.input`
   text-indent: 10px;
   border-radius: 3px;
 `;
+

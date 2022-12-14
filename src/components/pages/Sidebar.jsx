@@ -5,7 +5,7 @@ import useModal from "../../hooks/useModal";
 import Modal from "../common/modals/Modal";
 import { postLists } from "../../redux/modules/postSlice";
 
-export default function sidebar() {
+export default function Sidebar() {
   const contentInput = useRef();
   const [modal, onChangeModalHandler] = useModal();
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ export default function sidebar() {
   const onSubmitHandler = () => {
     console.log(contentInput.current.value);
     if (contentInput.current.value === "") {
-      return alert("이름을 작성하셨는지 한번 더 확인해주세요.");
+      return alert("이름을 작성하셨는지 한번 더 확인해주세요."); // eslint-disable-line no-alert
     }
     return dispatch(postLists({ name: contentInput.current.value }));
   };
@@ -49,6 +49,7 @@ export default function sidebar() {
                 background: "grey",
                 display: "block",
               }}
+            />
             <span>커뮤니티 리스트</span>
           </span>
           <StCategoryInner>
@@ -127,4 +128,3 @@ const StModalInput = styled.input`
   text-indent: 10px;
   border-radius: 3px;
 `;
-

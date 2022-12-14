@@ -1,19 +1,17 @@
 {
-  "posts": [
+  "lists": [
+    {
+      "id": 0,
+      "title": "아이유입니다.",
+      "content": "ddddddd",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
+    },
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "아이유입니다.",
+      "content": "ddddddd",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  "comm": []
 }

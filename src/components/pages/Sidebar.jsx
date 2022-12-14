@@ -1,16 +1,43 @@
-import React from "react";
-// import logo from "../../assets/img/logo.png";
+import React, { useRef } from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import useModal from "../../hooks/useModal";
+import Modal from "../common/modals/Modal";
+import { postLists } from "../../redux/modules/postSlice";
 
 export default function sidebar() {
+  const contentInput = useRef();
+  const [modal, onChangeModalHandler] = useModal();
+  const dispatch = useDispatch();
+  const closeEventHandler = () => {
+    onChangeModalHandler();
+    contentInput.current.value = "";
+  };
+  const onSubmitHandler = () => {
+    console.log(contentInput.current.value);
+    if (contentInput.current.value === "") {
+      return alert("이름을 작성하셨는지 한번 더 확인해주세요.");
+    }
+    return dispatch(postLists({ name: contentInput.current.value }));
+  };
+
   return (
     <StSidebar>
+      <Modal
+        modal={modal}
+        close={closeEventHandler}
+        submit={onSubmitHandler}
+        header="리스트 추가하기"
+      >
+        <StTitle>리스트이름 : </StTitle>
+        <StModalInput type="text" ref={contentInput} />
+      </Modal>
       <div className="sidebar_inner">
         <div className="logo_container">
           <StLogo className="logo">LOGO</StLogo>
         </div>
         <div className="add_button_container">
-          <StButton>리스트 추가하기</StButton>
+          <StButton onClick={onChangeModalHandler}>리스트 추가하기</StButton>
         </div>
         <StCategory>
           <span className="category_title">
@@ -22,10 +49,8 @@ export default function sidebar() {
                 background: "grey",
                 display: "block",
               }}
-            ></span>
             <span>커뮤니티 리스트</span>
           </span>
-          {/* 밑에 카테고리 리스트는 나중에 컴포넌트로 만들 예정*/}
           <StCategoryInner>
             <span>리스트1</span>
             <span>리스트1</span>
@@ -39,10 +64,12 @@ export default function sidebar() {
 
 const StSidebar = styled.div`
   width: 100%;
-
   max-width: 270px;
-
   border: 1px solid #ececec;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #fff;
   .sidebar_inner {
     min-height: 100vh;
     box-sizing: border-box;
@@ -87,3 +114,17 @@ const StLogo = styled.span`
   font-size: 2rem;
   font-weight: 600;
 `;
+
+const StTitle = styled.span`
+  min-width: 25%;
+`;
+
+const StModalInput = styled.input`
+  width: 100%;
+  height: 28px;
+  border: 1px solid #c8c8c8;
+  outline: none;
+  text-indent: 10px;
+  border-radius: 3px;
+`;
+

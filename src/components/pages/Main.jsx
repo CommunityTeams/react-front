@@ -1,9 +1,28 @@
-import React from "react";
-import { BsPencilSquare } from "react-icons/bs";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, Link } from "react-router-dom";
+import { BsPencilSquare } from "react-icons/bs";
+import { getLists } from "../../redux/modules/postSlice";
+import Card from "./Card";
 
 export default function Main() {
+  const dispatch = useDispatch();
+  const dataList = useSelector((state) => state.post.lists);
+  console.log(dataList);
+  const isLoading = useSelector((state) => state.isLoading);
+  const navigate = useNavigate();
+  const locationHandler = (id) => {
+    navigate(`/${id}`);
+  };
+  useEffect(() => {
+    dispatch(getLists());
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <div>로딩 중....</div>;
+  }
+
   return (
     <StMainWrapper>
       <div className="main_inner">
@@ -19,13 +38,15 @@ export default function Main() {
           </div>
           <hr />
           <div className="upload_list_container">
-            {/* {dataList?.map((data) => (
+
+            {dataList?.map((data) => (
               <Card
                 key={data.id}
                 data={data}
                 locationHandler={locationHandler}
               />
-            ))} */}
+            ))}
+
           </div>
         </StUploadContainer>
       </div>
@@ -82,3 +103,4 @@ const StWritingBtn = styled.span`
     box-shadow: none;
   }
 `;
+

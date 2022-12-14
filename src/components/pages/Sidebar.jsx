@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import useModal from "../../hooks/useModal";
 import Modal from "../common/modals/Modal";
 import { postLists } from "../../redux/modules/postSlice";
@@ -9,6 +9,8 @@ export default function sidebar() {
   const contentInput = useRef();
   const [modal, onChangeModalHandler] = useModal();
   const dispatch = useDispatch();
+  const comm = useSelector((state) => state.post.comm);
+  console.log(comm);
   const closeEventHandler = () => {
     onChangeModalHandler();
     contentInput.current.value = "";
@@ -18,6 +20,8 @@ export default function sidebar() {
     if (contentInput.current.value === "") {
       return alert("이름을 작성하셨는지 한번 더 확인해주세요.");
     }
+    onChangeModalHandler();
+
     return dispatch(postLists({ name: contentInput.current.value }));
   };
 
@@ -49,12 +53,16 @@ export default function sidebar() {
                 background: "grey",
                 display: "block",
               }}
+            />
             <span>커뮤니티 리스트</span>
           </span>
+
           <StCategoryInner>
-            <span>리스트1</span>
-            <span>리스트1</span>
-            <span>리스트1</span>
+            {comm?.map((item) => {
+              return (
+                <StCategoryTitle key={item.name}>{item.name}</StCategoryTitle>
+              );
+            })}
           </StCategoryInner>
         </StCategory>
       </div>
@@ -127,4 +135,6 @@ const StModalInput = styled.input`
   text-indent: 10px;
   border-radius: 3px;
 `;
-
+const StCategoryTitle = styled.input`
+  font-size: 0.9rem;
+`;

@@ -93,7 +93,9 @@ const StMainTitle = styled.h2`
 
 const StWritingBtn = styled.span`
   padding: 7px 10px;
+
   border: 1px solid #ececec;
+
   cursor: pointer;
   font-size: 0.8rem;
   box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 10%);

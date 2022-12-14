@@ -25,6 +25,5 @@ module.exports = {
         allowExpressionValues: true,
       },
     ],
-    "import/prefer-default-export": off,
   },
 };

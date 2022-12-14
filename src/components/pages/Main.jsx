@@ -38,7 +38,6 @@ export default function Main() {
           </div>
           <hr />
           <div className="upload_list_container">
-
             {dataList?.map((data) => (
               <Card
                 key={data.id}
@@ -46,7 +45,6 @@ export default function Main() {
                 locationHandler={locationHandler}
               />
             ))}
-
           </div>
         </StUploadContainer>
       </div>
@@ -103,4 +101,3 @@ const StWritingBtn = styled.span`
     box-shadow: none;
   }
 `;
-

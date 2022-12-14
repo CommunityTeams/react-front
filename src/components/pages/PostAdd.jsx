@@ -6,7 +6,7 @@ import styled from "styled-components";
 // import { addPost, __getComment } from '../redux/modules/postSlice';
 // import { __addComment } from "../redux/modules/postSlice";
 
-const PostAdd = () => {
+function PostAdd() {
   //dispatch
 
   //useState
@@ -51,7 +51,7 @@ const PostAdd = () => {
       </StAddForm>
     </StContainer>
   );
-};
+}
 
 export default PostAdd;
 

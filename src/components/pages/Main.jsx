@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { BsPencilSquare } from "react-icons/bs";
-import { getTodos } from "../../redux/modules/postSlice";
+import { getLists } from "../../redux/modules/postSlice";
 import Card from "./Card";
 
 export default function Main() {
   const dispatch = useDispatch();
-  const dataList = useSelector((state) => state.post.todos);
+  const dataList = useSelector((state) => state.post.lists);
   console.log(dataList);
   const isLoading = useSelector((state) => state.isLoading);
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export default function Main() {
     navigate(`/${id}`);
   };
   useEffect(() => {
-    dispatch(getTodos());
+    dispatch(getLists());
   }, [dispatch]);
 
   if (isLoading) {

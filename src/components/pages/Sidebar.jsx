@@ -1,21 +1,24 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
 import useModal from "../../hooks/useModal";
 import Modal from "../common/modals/Modal";
+import { postLists } from "../../redux/modules/postSlice";
 
 export default function sidebar() {
   const contentInput = useRef();
   const [modal, onChangeModalHandler] = useModal();
-
+  const dispatch = useDispatch();
   const closeEventHandler = () => {
     onChangeModalHandler();
     contentInput.current.value = "";
   };
   const onSubmitHandler = () => {
+    console.log(contentInput.current.value);
     if (contentInput.current.value === "") {
       return alert("이름을 작성하셨는지 한번 더 확인해주세요.");
     }
-    return console.log(contentInput.current.value);
+    return dispatch(postLists({ name: contentInput.current.value }));
   };
 
   return (

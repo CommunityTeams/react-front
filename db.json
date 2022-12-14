@@ -1,5 +1,5 @@
 {
-  "todos": [
+  "lists": [
     {
       "id": 0,
       "title": "아이유입니다.",
@@ -11,66 +11,7 @@
       "title": "아이유입니다.",
       "content": "ddddddd",
       "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
-    },
-    {
-      "id": 2,
-      "title": "아이유입니다.",
-      "content": "ddddddd",
-      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
-    },
-    {
-      "id": 3,
-      "title": "아이유입니다.",
-      "content": "ddddddd",
-      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
-    },
-    {
-      "id": 4,
-      "title": "아이유입니다.",
-      "content": "ddddddd",
-      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
-    },
-    {
-      "id": 5,
-      "title": "아이유입니다.",
-      "content": "ddddddd",
-      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
-    },
-    {
-      "id": 6,
-      "title": "아이유입니다.",
-      "content": "ddddddd",
-      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
-    },
-    {
-      "id": 7,
-      "title": "아이유입니다.",
-      "content": "ddddddd",
-      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
-    },
-    {
-      "id": 8,
-      "title": "아이유입니다.",
-      "content": "ddddddd",
-      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
-    },
-    {
-      "id": 9,
-      "title": "아이유입니다.",
-      "content": "ddddddd",
-      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
-    },
-    {
-      "id": 10,
-      "title": "아이유입니다.",
-      "content": "ddddddd",
-      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
-    },
-    {
-      "id": 11,
-      "title": "아이유입니다.",
-      "content": "ddddddd",
-      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
     }
-  ]
+  ],
+  "comm": []
 }

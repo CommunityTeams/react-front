@@ -1,9 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../components/layout/Home";
-import { Header } from "../components/layout/Header";
+import Header from "../components/layout/Header";
 import PostAdd from "../components/pages/PostAdd";
-
 
 export default function Homepage() {
   return (

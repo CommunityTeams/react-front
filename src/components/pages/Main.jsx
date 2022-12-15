@@ -6,12 +6,18 @@ import { BsPencilSquare } from "react-icons/bs";
 import { getLists } from "../../redux/modules/postSlice";
 import Card from "./Card";
 
-export default function Main() {
+export default function Main({ categoryName }) {
   const dispatch = useDispatch();
   const dataList = useSelector((state) => state.post.lists);
-
   const isLoading = useSelector((state) => state.isLoading);
   const navigate = useNavigate();
+
+  const nameValue = dataList?.filter((data) => {
+    if (categoryName === data.category) {
+      return data;
+    }
+    return "";
+  });
   const locationHandler = (id) => {
     navigate(`/${id}`);
   };
@@ -38,13 +44,15 @@ export default function Main() {
           </div>
           <hr />
           <div className="upload_list_container">
-            {dataList?.map((data) => (
-              <Card
-                key={data.id}
-                data={data}
-                locationHandler={locationHandler}
-              />
-            ))}
+            {nameValue.map((data) => {
+              return (
+                <Card
+                  key={data.id}
+                  data={data}
+                  locationHandler={locationHandler}
+                />
+              );
+            })}
           </div>
         </StUploadContainer>
       </div>
@@ -82,13 +90,14 @@ const StUploadContainer = styled.div`
   gap: 10px 0;
   .upload_list_container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
   }
 `;
 const StMainTitle = styled.h2`
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  font-family: "Corinthia", cursive;
 `;
 
 const StWritingBtn = styled.span`

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { IoIosClose } from "react-icons/io";
 
 export default function Modal(props) {
-  const { modal, close, submit, header } = props;
+  const { modal, close, submit, header, button } = props;
 
   return (
     <StModalContainer className={modal ? "modal open" : "modal"}>
@@ -16,7 +16,7 @@ export default function Modal(props) {
           <div className="modal_content_inner">{props.children}</div>
           <div className="modal_footer">
             <StButton type="button" onClick={submit}>
-              추가하기
+              {button}
             </StButton>
           </div>
         </StContent>

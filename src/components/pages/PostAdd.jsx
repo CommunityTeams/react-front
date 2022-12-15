@@ -9,7 +9,6 @@ import {__addNewPost,__updatePost } from '../../redux/modules/postsSlice';
 
 const PostAdd = () => {
  const { lists} = useSelector((state) => state.lists);
-  // const postText = useSelector((state) => state.postText);
   // dispatch
   const dispatch = useDispatch();
   const navigate = useNavigate();

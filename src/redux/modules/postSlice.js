@@ -49,10 +49,42 @@ export const postComm = createAsyncThunk(
     }
   }
 );
+export const setReple = createAsyncThunk(
+  "setReple",
+  async (payload, ThunkAPI) => {
+    try {
+      console.log(payload);
+      const data = await axios.post("http://localhost:3004/reple", payload);
+      return ThunkAPI.fulfillWithValue(data.data);
 
+      // Promise가 resolve 됬을 경우
+    } catch (error) {
+      console.log(error);
+      return ThunkAPI.rejectWithValue(error);
+      /* ThunkAPI. */
+    }
+  }
+);
+export const getReple = createAsyncThunk(
+  "getReple",
+  async (payload, ThunkAPI) => {
+    try {
+      console.log(payload);
+      const data = await axios.get("http://localhost:3004/reple");
+      return ThunkAPI.fulfillWithValue(data.data);
+
+      // Promise가 resolve 됬을 경우
+    } catch (error) {
+      console.log(error);
+      return ThunkAPI.rejectWithValue(error);
+      /* ThunkAPI. */
+    }
+  }
+);
 const initialState = {
   lists: [],
   comm: [],
+  reple: [],
   set: {},
   isLoading: false,
   error: null,
@@ -81,6 +113,11 @@ export const postSlice = createSlice({
     [getComm.fulfilled]: (state, action) => {
       state.isLoading = false; // 네트워크 요청이 끝났으니, false로 변경합니다.
       state.comm = action.payload; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
+    },
+
+    [getReple.fulfilled]: (state, action) => {
+      state.isLoading = false; // 네트워크 요청이 끝났으니, false로 변경합니다.
+      state.reple = action.payload; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
     },
   },
 });

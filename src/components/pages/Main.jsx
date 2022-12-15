@@ -97,7 +97,7 @@ const StUploadContainer = styled.div`
 const StMainTitle = styled.h2`
   font-size: 1.5rem;
   font-weight: 600;
-  font-family: "Corinthia", cursive;
+  font-family: "Noto Sans KR", sans-serif;
 `;
 
 const StWritingBtn = styled.span`

@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Div = styled.div`
   width: 100%;
-  padding: 5px;
+  padding: 5px 10px;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;

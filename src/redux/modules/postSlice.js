@@ -24,7 +24,6 @@ export const getComm = createAsyncThunk(
   async (payload, ThunkAPI) => {
     try {
       const data = await axios.get("http://localhost:3004/comm");
-
       return ThunkAPI.fulfillWithValue(data.data);
       // Promise가 resolve 됬을 경우
     } catch (error) {

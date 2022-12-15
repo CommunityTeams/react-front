@@ -69,6 +69,20 @@
       "content": "ddddddd",
       "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
       "category": "777"
+    },
+    {
+      "title": "453453",
+      "content": "52432423",
+      "category": "ㄹㄹㄹㄹㅎ",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "id": 10
+    },
+    {
+      "title": "승우님 짱",
+      "content": "스토어 잘만들었어요!",
+      "category": "테스트입니다.",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "id": 11
     }
   ],
   "comm": [
@@ -96,6 +110,26 @@
       "name": "777",
       "isClicked": false,
       "id": 5
+    },
+    {
+      "name": "테스트3",
+      "isClicked": false,
+      "id": 6
+    },
+    {
+      "name": "테스트테스트",
+      "isClicked": false,
+      "id": 7
+    },
+    {
+      "name": "ㄹㄹㄹㄹㄹ",
+      "isClicked": false,
+      "id": 8
+    },
+    {
+      "name": "52423423423",
+      "isClicked": false,
+      "id": 9
     }
   ]
 }

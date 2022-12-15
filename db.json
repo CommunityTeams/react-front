@@ -1,19 +1,75 @@
 {
-  "posts": [
+  "lists": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "1313",
+      "content": "12312",
+      "category": "13414134",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "id": 1
+    },
+    {
+      "title": "41312312312",
+      "content": "3113431413",
+      "category": "13414134",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "id": 2
+    },
+    {
+      "title": "2312312",
+      "content": "234141234",
+      "category": "222232",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "id": 3
+    },
+    {
+      "title": "호효",
+      "content": "ㅆㅅ",
+      "category": "13414134",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "id": 4
     }
   ],
-  "comments": [
+  "comm": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "13414134",
+      "isClicked": false,
+      "id": 1
+    },
+    {
+      "name": "222232",
+      "isClicked": false,
+      "id": 2
+    },
+    {
+      "name": "ㅎㅎㅎㅎ",
+      "isClicked": false,
+      "id": 3
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "reple": [
+    {
+      "content": "1434123",
+      "id": "131",
+      "password": "3123",
+      "page": 3
+    },
+    {
+      "content": "4235235",
+      "id": "123",
+      "password": "12313",
+      "page": 1
+    },
+    {
+      "content": "4565545",
+      "id": "24",
+      "password": "5363414",
+      "page": 3
+    },
+    {
+      "content": "432",
+      "id": "234",
+      "password": "234234234",
+      "page": 4
+    }
+  ]
 }

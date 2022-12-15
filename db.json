@@ -4,31 +4,98 @@
       "id": 0,
       "title": "아이유입니다.",
       "content": "ddddddd",
-      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "category": "테스트입니다."
     },
     {
       "id": 1,
       "title": "아이유입니다.",
       "content": "ddddddd",
-      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg"
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "category": "테스트입니다."
+    },
+    {
+      "id": 2,
+      "title": "아이유입니다.",
+      "content": "ddddddd",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "category": "테스트입니다."
+    },
+    {
+      "id": 3,
+      "title": "아이유입니다.",
+      "content": "ddddddd",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "category": "테스트입니다."
+    },
+    {
+      "id": 4,
+      "title": "아이유입니다.",
+      "content": "ddddddd",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "category": "테스트2번입니다."
+    },
+    {
+      "id": 5,
+      "title": "아이유입니다.",
+      "content": "ddddddd",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "category": "ㄹㄹㄹㄹㅎ"
+    },
+    {
+      "id": 6,
+      "title": "아이유입니다.",
+      "content": "ddddddd",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "category": "ㄹㄹㄹㄹㅎ"
+    },
+    {
+      "id": 7,
+      "title": "아이유입니다.",
+      "content": "ddddddd",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "category": "666"
+    },
+    {
+      "id": 8,
+      "title": "아이유입니다.",
+      "content": "ddddddd",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "category": "777"
+    },
+    {
+      "id": 9,
+      "title": "아이유입니다.",
+      "content": "ddddddd",
+      "img": "https://image.bugsm.co.kr/album/images/500/202860/20286013.jpg",
+      "category": "777"
     }
   ],
   "comm": [
     {
-      "name": "988",
+      "name": "테스트입니다.",
+      "isClicked": false,
       "id": 1
     },
     {
-      "name": "888",
+      "name": "테스트2번입니다.",
+      "isClicked": false,
       "id": 2
     },
     {
-      "name": "222222",
+      "name": "ㄹㄹㄹㄹㅎ",
+      "isClicked": false,
       "id": 3
     },
     {
-      "name": "7777",
+      "name": "666",
+      "isClicked": false,
       "id": 4
+    },
+    {
+      "name": "777",
+      "isClicked": false,
+      "id": 5
     }
   ]
 }

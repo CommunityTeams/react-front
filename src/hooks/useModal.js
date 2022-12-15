@@ -5,7 +5,6 @@ const useModal = () => {
   const handler = () => {
     setModal(!modal);
   };
-  console.log(modal);
   return [modal, handler];
 };
 

@@ -66,6 +66,7 @@ export default function Sidebar({ setCategoryName }) {
         close={closeEventHandler}
         submit={onSubmitHandler}
         header="리스트 추가하기"
+        button="추가하기"
       >
         <StTitle>리스트이름 : </StTitle>
         <StModalInput type="text" ref={contentInput} />

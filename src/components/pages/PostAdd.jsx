@@ -8,29 +8,17 @@ import { __addNewPost } from "../../redux/modules/postsSlice";
 import { getComm } from "../../redux/modules/postSlice";
 
 function PostAdd() {
-  // dispatch
-
-  // useState
-
-  // onSubmitHandler
-
-  // onChangeHandler
-
-  // __addComment 시간나면 댓글달기
-
-  // __getComment 시간나면
   // 값을 담을 두 공간 필요하다. 1. 제목 , 2. 내용
   // 2개의 useState를 만들어야한다. useState 현재 상태를 저장하고, 변경할 수 있다. 첫번째 상태, 두번째 변경
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  // eslint-disable-next-line no-unused-vars
   const [select, setSelect] = useState("");
-  // eslint-disable-next-line no-unused-vars
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getComm());
   }, []);
+
   // dispatch로 Axios.get 요청 > 서버에서 모든 데이터를 가지고 와서 스토어에 저장을한다.
   // useSelector로 저장된 comm에 데이터들을 가지고 컴포넌트(뷰)로 온다 > state.post.comm
   // 데이터들이 담긴 변수(globalValue)들은 배열이다. console.log로 확인해보면 알 수 있음.
@@ -45,10 +33,8 @@ function PostAdd() {
   const name = globalValue.map((data) => {
     return data.name;
   });
-  console.log(id);
-  console.log(title, content);
+
   const onsubmitHandler = () => {
-    console.log(select);
     dispatch(
       __addNewPost({
         title,
@@ -60,9 +46,8 @@ function PostAdd() {
   };
   return (
     <StContainer>
-      {/* <StAddForm action="" onSubmit={onsubmitHandler}> */}
       <StAddForm action="">
-        <h2>작성자</h2>
+        <h2>카테고리</h2>
         <div>
           <select
             name=""
@@ -72,6 +57,7 @@ function PostAdd() {
               setSelect(e.target.value);
             }}
           >
+            <option default>카테고리를 선택해주세요</option>
             {name.map((data, idx) => {
               return (
                 <option key={id[idx]} value={data}>

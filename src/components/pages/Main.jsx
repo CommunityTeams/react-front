@@ -42,7 +42,7 @@ export default function Main({ categoryName }) {
               </StLink>
             </StWritingBtn>
           </div>
-          <hr />
+
           <div className="upload_list_container">
             {nameValue.map((data) => {
               return (
